@@ -22,11 +22,12 @@ public class GameTest {
         TeamName awayTeam = BARCELONA;
         Game validGame = new Game(homeTeam, awayTeam);
 
-        assertAll(
-                () -> assertEquals(0, validGame.getAwayTeamScore()),
-                () -> assertEquals(0, validGame.getHomeTeamScore()),
-                () -> assertEquals(homeTeam, validGame.getHomeTeam()),
-                () -> assertEquals(awayTeam, validGame.getAwayTeam()));
+        assertAll(() -> {
+            assertEquals(0, validGame.getAwayTeamScore());
+            assertEquals(0, validGame.getHomeTeamScore());
+            assertEquals(homeTeam, validGame.getHomeTeam());
+            assertEquals(awayTeam, validGame.getAwayTeam());
+        });
     }
 
     @ParameterizedTest
@@ -42,9 +43,10 @@ public class GameTest {
 
         validGame.updateScores(updatedHomeTeamScore, updatedAwayTeamScore);
 
-        assertAll(
-                () -> assertEquals(updatedHomeTeamScore, validGame.getHomeTeamScore()),
-                () -> assertEquals(updatedAwayTeamScore, validGame.getAwayTeamScore()));
+        assertAll(() -> {
+            assertEquals(updatedHomeTeamScore, validGame.getHomeTeamScore());
+            assertEquals(updatedAwayTeamScore, validGame.getAwayTeamScore());
+        });
     }
 
     @ParameterizedTest
